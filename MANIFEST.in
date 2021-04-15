@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include newstareg *.css
+recursive-include newstareg *.csv
+recursive-include newstareg *.html
+recursive-include newstareg *.ico
+recursive-include newstareg *.js
+recursive-include newstareg *.json
+recursive-include newstareg *.md
+recursive-include newstareg *.png
+recursive-include newstareg *.py
+recursive-include newstareg *.svg
+recursive-include newstareg *.txt
+recursive-exclude newstareg *.pyc
