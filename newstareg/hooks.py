@@ -12,7 +12,7 @@ app_email = "mg@erpcloud.systems"
 app_license = "MIT"
 
 override_doctype_class = {
-    'LoanDisbursement': 'app.overrides.loan_disbursement.LoanDisbursement'
+    'LoanDisbursement': 'app.overrides.loan_disbursement.CustomLoanDisbursement'
 }
 
 # Includes in <head>
