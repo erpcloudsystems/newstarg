@@ -116,7 +116,7 @@ class LoanDisbursement(AccountsController):
 		gle_map = []
 		loan_details = frappe.get_doc("Loan", self.against_loan)
 
-		if self.applicant_type == "Bank" and self.included_in_loan_amount:
+		if self.applicant_type == "Bank":
 			gle_map.append(
 				self.get_gl_dict({
 					"account": loan_details.receipt_account,
