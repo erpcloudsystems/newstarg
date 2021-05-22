@@ -14,7 +14,7 @@ from erpnext.loan_management.doctype.loan_security_unpledge.loan_security_unpled
 from frappe.utils import get_datetime
 from erpnext.loan_management.doctype.loan_disbursement.loan_disbursement import LoanDisbursement
 
-class LoanDisbursement1(LoanDisbursement):
+class LoanDisbursement(AccountsController):
 
 	def validate(self):
 		self.set_missing_values()
