@@ -1,0 +1,202 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2021-05-31 12:45:36.233060",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "contract_no",
+  "bank",
+  "column_break_4",
+  "start_date",
+  "end_date",
+  "credit_limit",
+  "facility_account",
+  "bank_guarantee_section",
+  "bg_credit",
+  "facility_bg",
+  "facility_terms",
+  "lc",
+  "lc_credit_limit",
+  "lc_interest",
+  "lc_account",
+  "column_break_17",
+  "lc_terms",
+  "overdraft_section",
+  "facility_od",
+  "od_terms",
+  "assets_section",
+  "assets_credit_limit",
+  "assets_interest",
+  "assets_interest_type",
+  "column_break_26",
+  "assets_terms"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "FAC-.YYYY.-"
+  },
+  {
+   "fieldname": "contract_no",
+   "fieldtype": "Data",
+   "label": "Contract No"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Link",
+   "label": "Bank",
+   "options": "Bank"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "credit_limit",
+   "fieldtype": "Currency",
+   "label": "Credit Limit"
+  },
+  {
+   "fieldname": "facility_account",
+   "fieldtype": "Link",
+   "label": "Facility Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "bank_guarantee_section",
+   "fieldtype": "Section Break",
+   "label": "Bank Guarantee"
+  },
+  {
+   "fieldname": "bg_credit",
+   "fieldtype": "Currency",
+   "label": "BG Credit "
+  },
+  {
+   "fieldname": "facility_bg",
+   "fieldtype": "Table",
+   "label": "Facility BG",
+   "options": "Facility BG"
+  },
+  {
+   "fieldname": "facility_terms",
+   "fieldtype": "Text Editor",
+   "label": "Facility Terms"
+  },
+  {
+   "fieldname": "lc",
+   "fieldtype": "Section Break",
+   "label": "LC"
+  },
+  {
+   "fieldname": "lc_credit_limit",
+   "fieldtype": "Currency",
+   "label": "LC Credit Limit"
+  },
+  {
+   "fieldname": "lc_interest",
+   "fieldtype": "Percent",
+   "label": "LC Interest"
+  },
+  {
+   "fieldname": "lc_account",
+   "fieldtype": "Link",
+   "label": "LC Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "lc_terms",
+   "fieldtype": "Text Editor",
+   "label": "Lc Terms"
+  },
+  {
+   "fieldname": "overdraft_section",
+   "fieldtype": "Section Break",
+   "label": "OverDraft"
+  },
+  {
+   "fieldname": "facility_od",
+   "fieldtype": "Table",
+   "label": "Facility OD",
+   "options": "Facility OD"
+  },
+  {
+   "fieldname": "od_terms",
+   "fieldtype": "Text Editor",
+   "label": "OD Terms"
+  },
+  {
+   "fieldname": "assets_section",
+   "fieldtype": "Section Break",
+   "label": "Assets"
+  },
+  {
+   "fieldname": "assets_credit_limit",
+   "fieldtype": "Currency",
+   "label": "Assets Credit Limit"
+  },
+  {
+   "fieldname": "assets_interest",
+   "fieldtype": "Percent",
+   "label": "Assets Interest"
+  },
+  {
+   "fieldname": "assets_interest_type",
+   "fieldtype": "Select",
+   "label": "Assets Interest Type",
+   "options": "Fixed\nVariable"
+  },
+  {
+   "fieldname": "assets_terms",
+   "fieldtype": "Text Editor",
+   "label": "Assets Terms"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-05-31 13:30:40.690747",
+ "modified_by": "Administrator",
+ "module": "Newstareg",
+ "name": "Facility",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
