@@ -1,0 +1,400 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2021-06-19 23:27:15.183374",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "type_of_payment_section",
+  "naming_series",
+  "type",
+  "is_cheque",
+  "drawn_bank",
+  "cheque_type",
+  "first_beneficiary",
+  "person_name",
+  "issuer_name",
+  "reference_no",
+  "reference_date",
+  "clearance_date",
+  "picture_of_check",
+  "bank_account",
+  "paid_amount",
+  "column_break_9",
+  "posting_date",
+  "company",
+  "contract",
+  "facility",
+  "loan",
+  "amended_from",
+  "payment_from__to_section",
+  "paid_from_party",
+  "party_type_from",
+  "party_from",
+  "party_account_from",
+  "paid_from_bank",
+  "bank_from",
+  "bank_account_from",
+  "bank_account_from_acc",
+  "account_from",
+  "column_break_29",
+  "paid_to_party",
+  "party_type_to",
+  "party_to",
+  "account_paid_to",
+  "paid_to_bank",
+  "bank_to",
+  "bank_account_to",
+  "bank_account_to_acc",
+  "acc_to",
+  "section_break_37",
+  "fees_account",
+  "column_break_45",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "type_of_payment_section",
+   "fieldtype": "Section Break",
+   "label": "Type of Payment"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "options": "GUR-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "\nFacility\nFacility Guarantee\nContract\nLoan Guarantee",
+   "reqd": 1
+  },
+  {
+   "depends_on": "is_cheque",
+   "fieldname": "drawn_bank",
+   "fieldtype": "Link",
+   "label": "Drawn Bank",
+   "mandatory_depends_on": "is_cheque",
+   "options": "Bank"
+  },
+  {
+   "depends_on": "is_cheque",
+   "fieldname": "cheque_type",
+   "fieldtype": "Select",
+   "label": "Cheque Type",
+   "mandatory_depends_on": "is_cheque",
+   "options": "\nOpened\nCrossed\nEndorsed"
+  },
+  {
+   "depends_on": "is_cheque",
+   "fieldname": "first_beneficiary",
+   "fieldtype": "Select",
+   "label": "First Beneficiary",
+   "mandatory_depends_on": "is_cheque",
+   "options": "\nPersonal\nCompany"
+  },
+  {
+   "depends_on": "is_cheque",
+   "fieldname": "person_name",
+   "fieldtype": "Data",
+   "label": "Person Name",
+   "mandatory_depends_on": "is_cheque"
+  },
+  {
+   "depends_on": "is_cheque",
+   "fieldname": "issuer_name",
+   "fieldtype": "Data",
+   "label": "Issuer Name",
+   "mandatory_depends_on": "is_cheque"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "depends_on": "eval: in_list([\"Contract\"], doc.type)",
+   "fieldname": "contract",
+   "fieldtype": "Link",
+   "label": "Contract",
+   "mandatory_depends_on": "eval: in_list([\"Contract\"], doc.type)",
+   "options": "Contract"
+  },
+  {
+   "depends_on": "eval: in_list([\"Facility\", \"Facility Guarantee\"], doc.type)",
+   "fieldname": "facility",
+   "fieldtype": "Link",
+   "label": "Facility",
+   "mandatory_depends_on": "eval: in_list([\"Facility\", \"Facility Guarantee\"], doc.type)",
+   "options": "Facility"
+  },
+  {
+   "depends_on": "eval: in_list([\"Loan Guarantee\"], doc.type)",
+   "fieldname": "loan",
+   "fieldtype": "Link",
+   "label": "Loan",
+   "mandatory_depends_on": "eval: in_list([\"Loan Guarantee\"], doc.type)",
+   "options": "Loan"
+  },
+  {
+   "depends_on": "is_cheque",
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "reference_no",
+   "mandatory_depends_on": "is_cheque"
+  },
+  {
+   "depends_on": "is_cheque",
+   "fieldname": "picture_of_check",
+   "fieldtype": "Attach",
+   "label": "picture_of_check",
+   "mandatory_depends_on": "is_cheque"
+  },
+  {
+   "depends_on": "is_cheque",
+   "fieldname": "reference_date",
+   "fieldtype": "Data",
+   "label": "reference_date",
+   "mandatory_depends_on": "is_cheque"
+  },
+  {
+   "depends_on": "is_cheque",
+   "fieldname": "clearance_date",
+   "fieldtype": "Data",
+   "label": "clearance_date"
+  },
+  {
+   "fieldname": "payment_from__to_section",
+   "fieldtype": "Section Break",
+   "label": "Payment From / To"
+  },
+  {
+   "depends_on": "eval:doc.paid_to_party",
+   "fieldname": "account_paid_to",
+   "fieldtype": "Link",
+   "label": "Account Paid To",
+   "mandatory_depends_on": "eval:doc.paid_to_party",
+   "options": "Account"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Guarantee Transaction",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "bank_account",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "options": "Bank Account"
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount"
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.paid_to_party",
+   "fieldname": "party_type_to",
+   "fieldtype": "Link",
+   "label": "Party Type To",
+   "mandatory_depends_on": "eval:doc.paid_to_party",
+   "options": "DocType"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_cheque",
+   "fieldtype": "Check",
+   "label": "Is Cheque"
+  },
+  {
+   "depends_on": "eval:doc.paid_from_party",
+   "fieldname": "party_type_from",
+   "fieldtype": "Link",
+   "label": "Party Type",
+   "mandatory_depends_on": "eval:doc.paid_from_party",
+   "options": "DocType"
+  },
+  {
+   "depends_on": "eval:doc.paid_from_party",
+   "fieldname": "party_from",
+   "fieldtype": "Dynamic Link",
+   "label": "Party",
+   "mandatory_depends_on": "eval:doc.paid_from_party",
+   "options": "party_type_from"
+  },
+  {
+   "depends_on": "eval:doc.paid_to_party",
+   "fieldname": "party_to",
+   "fieldtype": "Dynamic Link",
+   "label": "Party Paid To",
+   "mandatory_depends_on": "eval:doc.paid_to_party",
+   "options": "party_type_to"
+  },
+  {
+   "default": "0",
+   "fieldname": "paid_from_party",
+   "fieldtype": "Check",
+   "label": "Paid From Party"
+  },
+  {
+   "default": "0",
+   "fieldname": "paid_from_bank",
+   "fieldtype": "Check",
+   "label": "Paid From Bank"
+  },
+  {
+   "depends_on": "eval:doc.paid_from_party",
+   "fieldname": "party_account_from",
+   "fieldtype": "Link",
+   "label": "Account Paid From",
+   "mandatory_depends_on": "eval:doc.paid_from_party",
+   "options": "Account"
+  },
+  {
+   "depends_on": "eval:doc.paid_from_bank",
+   "fieldname": "bank_account_from",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "mandatory_depends_on": "eval:doc.paid_from_bank",
+   "options": "Bank Account"
+  },
+  {
+   "depends_on": "eval:doc.paid_from_bank",
+   "fieldname": "bank_account_from_acc",
+   "fieldtype": "Link",
+   "label": "Account",
+   "mandatory_depends_on": "eval:doc.paid_from_bank",
+   "options": "Account"
+  },
+  {
+   "fieldname": "section_break_37",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "paid_to_party",
+   "fieldtype": "Check",
+   "label": "Paid To Party"
+  },
+  {
+   "default": "0",
+   "fieldname": "paid_to_bank",
+   "fieldtype": "Check",
+   "label": "Paid To Bank"
+  },
+  {
+   "depends_on": "eval:doc.paid_from_bank",
+   "fieldname": "bank_from",
+   "fieldtype": "Link",
+   "label": "Bank",
+   "mandatory_depends_on": "eval:doc.paid_from_bank",
+   "options": "Bank"
+  },
+  {
+   "depends_on": "eval:!doc.paid_from_bank && !doc.paid_from_party",
+   "fieldname": "account_from",
+   "fieldtype": "Link",
+   "label": "Account From",
+   "mandatory_depends_on": "eval:!doc.paid_from_bank && !doc.paid_from_party",
+   "options": "Account"
+  },
+  {
+   "depends_on": "eval:doc.paid_to_bank",
+   "fieldname": "bank_to",
+   "fieldtype": "Link",
+   "label": "Bank",
+   "mandatory_depends_on": "eval:doc.paid_to_bank",
+   "options": "Bank"
+  },
+  {
+   "depends_on": "eval:doc.paid_to_bank",
+   "fieldname": "bank_account_to",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "mandatory_depends_on": "eval:doc.paid_to_bank",
+   "options": "Bank Account"
+  },
+  {
+   "depends_on": "eval:doc.paid_to_bank",
+   "fieldname": "bank_account_to_acc",
+   "fieldtype": "Link",
+   "label": "Account",
+   "mandatory_depends_on": "eval:doc.paid_to_bank",
+   "options": "Account"
+  },
+  {
+   "depends_on": "eval:!doc.paid_to_bank && !doc.paid_to_party",
+   "fieldname": "acc_to",
+   "fieldtype": "Link",
+   "label": "Account To",
+   "mandatory_depends_on": "eval:!doc.paid_to_bank && !doc.paid_to_party",
+   "options": "Account"
+  },
+  {
+   "fieldname": "fees_account",
+   "fieldtype": "Link",
+   "label": "Fees Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_45",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-06-20 13:57:03.389781",
+ "modified_by": "Administrator",
+ "module": "Newstareg",
+ "name": "Guarantee Transaction",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
