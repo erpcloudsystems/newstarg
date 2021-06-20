@@ -19,15 +19,14 @@
   "reference_date",
   "clearance_date",
   "picture_of_check",
-  "bank_account",
-  "paid_amount",
   "column_break_9",
   "posting_date",
   "company",
   "contract",
   "facility",
   "loan",
-  "amended_from",
+  "reference_party_type",
+  "reference_party",
   "payment_from__to_section",
   "paid_from_party",
   "party_type_from",
@@ -49,9 +48,12 @@
   "bank_account_to_acc",
   "acc_to",
   "section_break_37",
+  "paid_amount",
   "fees_account",
+  "fees_amount",
   "column_break_45",
-  "notes"
+  "notes",
+  "amended_from"
  ],
  "fields": [
   {
@@ -202,12 +204,6 @@
    "options": "Guarantee Transaction",
    "print_hide": 1,
    "read_only": 1
-  },
-  {
-   "fieldname": "bank_account",
-   "fieldtype": "Link",
-   "label": "Bank Account",
-   "options": "Bank Account"
   },
   {
    "fieldname": "paid_amount",
@@ -370,12 +366,29 @@
    "fieldname": "notes",
    "fieldtype": "Small Text",
    "label": "Notes"
+  },
+  {
+   "fieldname": "fees_amount",
+   "fieldtype": "Currency",
+   "label": "Fees Amount"
+  },
+  {
+   "fieldname": "reference_party_type",
+   "fieldtype": "Link",
+   "label": "Reference Party Type",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "reference_party",
+   "fieldtype": "Dynamic Link",
+   "label": "Reference Party",
+   "options": "reference_party_type"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2021-06-20 13:57:03.389781",
+ "modified": "2021-06-20 16:23:14.653024",
  "modified_by": "Administrator",
  "module": "Newstareg",
  "name": "Guarantee Transaction",
