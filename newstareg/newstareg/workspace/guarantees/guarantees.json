@@ -25,7 +25,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Guarantee",
+   "label": "Bank Guarantee",
    "link_to": "Bank Guarantee",
    "link_type": "DocType",
    "onboard": 0,
@@ -76,20 +76,13 @@
    "type": "Card Break"
   }
  ],
- "modified": "2021-06-21 06:59:58.794053",
+ "modified": "2021-06-21 15:18:31.962879",
  "modified_by": "Administrator",
  "module": "Newstareg",
  "name": "Guarantees",
  "owner": "Administrator",
  "pin_to_bottom": 0,
  "pin_to_top": 1,
- "shortcuts": [
-  {
-   "doc_view": "List",
-   "label": "BG Action",
-   "link_to": "BG Action",
-   "type": "Report"
-  }
- ],
+ "shortcuts": [],
  "shortcuts_label": "Shortcuts"
 }

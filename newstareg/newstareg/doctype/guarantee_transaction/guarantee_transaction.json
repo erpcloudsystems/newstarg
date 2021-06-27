@@ -49,6 +49,7 @@
   "acc_to",
   "section_break_37",
   "paid_amount",
+  "fees",
   "fees_account",
   "fees_amount",
   "column_break_45",
@@ -282,6 +283,7 @@
   },
   {
    "depends_on": "eval:doc.paid_from_bank",
+   "fetch_from": "bank_account_from.account",
    "fieldname": "bank_account_from_acc",
    "fieldtype": "Link",
    "label": "Account",
@@ -338,6 +340,7 @@
   },
   {
    "depends_on": "eval:doc.paid_to_bank",
+   "fetch_from": "bank_account_to.account",
    "fieldname": "bank_account_to_acc",
    "fieldtype": "Link",
    "label": "Account",
@@ -353,9 +356,11 @@
    "options": "Account"
   },
   {
+   "depends_on": "eval:doc.fees",
    "fieldname": "fees_account",
    "fieldtype": "Link",
    "label": "Fees Account",
+   "mandatory_depends_on": "eval:doc.fees",
    "options": "Account"
   },
   {
@@ -368,9 +373,11 @@
    "label": "Notes"
   },
   {
+   "depends_on": "eval:doc.fees",
    "fieldname": "fees_amount",
    "fieldtype": "Currency",
-   "label": "Fees Amount"
+   "label": "Fees Amount",
+   "mandatory_depends_on": "eval:doc.fees"
   },
   {
    "fieldname": "reference_party_type",
@@ -383,12 +390,23 @@
    "fieldtype": "Dynamic Link",
    "label": "Reference Party",
    "options": "reference_party_type"
+  },
+  {
+   "default": "0",
+   "fieldname": "fees",
+   "fieldtype": "Check",
+   "label": "Fees"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2021-06-20 16:23:14.653024",
+ "links": [
+  {
+   "link_doctype": "Journal Entry",
+   "link_fieldname": "gur"
+  }
+ ],
+ "modified": "2021-06-24 23:02:20.006907",
  "modified_by": "Administrator",
  "module": "Newstareg",
  "name": "Guarantee Transaction",
