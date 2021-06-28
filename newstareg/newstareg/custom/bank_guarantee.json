@@ -281,14 +281,14 @@
    "_comments": null,
    "_liked_by": null,
    "_user_tags": null,
-   "creation": "2021-06-28 12:11:44.069604",
+   "creation": "2021-06-28 13:19:49.914914",
    "default_value": null,
    "doc_type": "Bank Guarantee",
    "docstatus": 0,
    "doctype_or_field": "DocType",
    "field_name": null,
    "idx": 0,
-   "modified": "2021-06-28 12:11:44.069604",
+   "modified": "2021-06-28 13:19:49.914914",
    "modified_by": "Administrator",
    "name": "Bank Guarantee-main-links_order",
    "owner": "Administrator",
@@ -298,7 +298,7 @@
    "property": "links_order",
    "property_type": "Small Text",
    "row_name": null,
-   "value": "[\"46984eaa28\", \"95c5e07170\"]"
+   "value": "[\"46984eaa28\"]"
   },
   {
    "_assign": null,
