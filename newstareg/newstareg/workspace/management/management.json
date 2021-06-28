@@ -111,15 +111,6 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 1,
-   "label": "Guarantee Report",
-   "link_to": "Bank Guarantee Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
    "is_query_report": 0,
    "label": "Loans",
    "link_type": "DocType",
@@ -136,7 +127,7 @@
    "type": "Link"
   }
  ],
- "modified": "2021-06-28 10:27:34.324636",
+ "modified": "2021-06-28 13:49:20.078252",
  "modified_by": "Administrator",
  "module": "Newstareg",
  "name": "Management",

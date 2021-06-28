@@ -35,20 +35,19 @@ def get_columns():
 			"label": _("purpose"),
 			"fieldname": "bank_guarantee_purpose",
 			"fieldtype": "Data",
-			"width": 80
+			"width": 120
 		},
 		{
 			"label": _("Bank"),
 			"fieldname": "bank",
-			"fieldtype": "Link",
-			"options": "Bank",
+			"fieldtype": "Data",
 			"width": 120
 		},
 		{
-			"label": _("No"),
-			"fieldname": "bank_guarantee_number",
-			"fieldtype": "Data",
-			"width": 80
+			"label": _("Start Date"),
+			"fieldname": "start_date",
+			"fieldtype": "Date",
+			"width": 120
 		},
 		{
 			"label": _("End Date"),
@@ -63,6 +62,12 @@ def get_columns():
 			"width": 120
 		},
 		{
+			"label": _("Status"),
+			"fieldname": "bank_guarantee_status",
+			"fieldtype": "Data",
+			"width": 80
+		},
+		{
 			"label": _("Amount"),
 			"fieldname": "amount",
 			"fieldtype": "Currency",
@@ -72,7 +77,7 @@ def get_columns():
 			"label": _("Bank %"),
 			"fieldname": "bank_percent",
 			"fieldtype": "Percent",
-			"width": 100
+			"width": 80
 		},
 		{
 			"label": _("Bank Amount"),
@@ -84,7 +89,7 @@ def get_columns():
 			"label": _("Facility %"),
 			"fieldname": "facility_percent",
 			"fieldtype": "Percent",
-			"width": 100
+			"width": 80
 		},
 		{
 			"label": _("Facility Amount"),
@@ -120,7 +125,9 @@ def get_item_price_qty_data(filters):
 						a.name_of_beneficiary as name_of_beneficiary,
 						a.bank_guarantee_purpose as bank_guarantee_purpose,
 						a.bank as bank,
+						a.bank_guarantee_status as bank_guarantee_status,
 						a.end_date as end_date,
+						a.start_date as start_date,
 						a.new_date as new_date,
 						a.amount as amount,
 						a.rate as bank_percent,
@@ -148,7 +155,9 @@ def get_item_price_qty_data(filters):
 				'name_of_beneficiary': item_dict.name_of_beneficiary,
 				'bank_guarantee_purpose': item_dict.bank_guarantee_purpose,
 				'bank': item_dict.bank,
+				'bank_guarantee_status': item_dict.bank_guarantee_status,
 				'end_date': item_dict.end_date,
+				'start_date': item_dict.start_date,
 				'new_date': item_dict.new_date,
 				'amount': item_dict.amount,
 				'bank_percent': item_dict.bank_percent,

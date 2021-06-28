@@ -45,12 +45,20 @@ frappe.query_reports["Bank Guarantee Report"] = {
          "formatter": function (value, row, column, data, default_formatter) {
                 value = default_formatter(value, row, column, data);
 
-                if (column.fieldname == "bank_percent" && data && data.bank_percent > 0) {
-                    value = "<span style='color:red'>" + value + "</span>";
+
+                if (column.fieldname == "new_date" && data && frappe.datetime.get_diff(data.new_date, frappe.datetime.nowdate()) <= 15) {
+                     value = "<span style='color:red;font-weight: bold;'>" + value + "</span>";
+                }else if(column.fieldname == "new_date" && data && frappe.datetime.get_diff(data.new_date, frappe.datetime.nowdate()) > 15){
+                    value =  value ;
                 }
-                else if (column.fieldname == "bank_percent" && data && data.bank_percent == 0) {
-                    value = "<span style='color:green'>" + value + "</span>";
+                if (column.fieldname == "end_date" && data && frappe.datetime.get_diff(data.end_date, frappe.datetime.nowdate()) <= 15) {
+                     value = "<span style='color:red;font-weight: bold;'>" + value + "</span>";
+                }else if(column.fieldname == "end_date" && data && frappe.datetime.get_diff(data.end_date, frappe.datetime.nowdate()) > 15){
+                    value =  value ;
                 }
+
+
+
 
                 return value;
             }
