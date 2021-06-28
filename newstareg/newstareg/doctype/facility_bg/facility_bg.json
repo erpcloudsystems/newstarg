@@ -8,36 +8,48 @@
   "bg_type",
   "account",
   "credit_limit",
+  "booked_limit",
+  "remaining_limit",
   "interest",
   "interest_type",
   "terms"
  ],
  "fields": [
   {
+   "columns": 1,
    "fieldname": "bg_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "BG Type",
    "options": "Initial\nAdvanced Payment\nFinal"
   },
   {
+   "columns": 3,
    "fieldname": "account",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Account",
    "options": "Account"
   },
   {
+   "columns": 2,
    "fieldname": "credit_limit",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Credit Limit"
   },
   {
+   "columns": 1,
    "fieldname": "interest",
    "fieldtype": "Percent",
+   "in_list_view": 1,
    "label": "Interest"
   },
   {
+   "columns": 1,
    "fieldname": "interest_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Interest Type",
    "options": "Fixed\nVariable"
   },
@@ -45,12 +57,26 @@
    "fieldname": "terms",
    "fieldtype": "Small Text",
    "label": "Terms"
+  },
+  {
+   "columns": 1,
+   "fieldname": "booked_limit",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Booked"
+  },
+  {
+   "columns": 1,
+   "fieldname": "remaining_limit",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Remaining"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2021-05-31 13:17:17.043368",
+ "modified": "2021-06-28 11:05:09.411784",
  "modified_by": "Administrator",
  "module": "Newstareg",
  "name": "Facility BG",

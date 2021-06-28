@@ -13,13 +13,19 @@
   "start_date",
   "end_date",
   "credit_limit",
+  "booked_limit",
+  "remaining_limit",
   "facility_account",
   "bank_guarantee_section",
   "bg_credit",
+  "bg_booked_limit",
+  "bg_remaining_limit",
   "facility_bg",
   "facility_terms",
   "lc",
   "lc_credit_limit",
+  "lc_booked_limit",
+  "lc_remaining_limit",
   "lc_interest",
   "lc_account",
   "column_break_17",
@@ -29,6 +35,8 @@
   "od_terms",
   "assets_section",
   "assets_credit_limit",
+  "assets_booked_limit",
+  "assets_remaining_limit",
   "assets_interest",
   "assets_interest_type",
   "column_break_26",
@@ -173,11 +181,56 @@
   {
    "fieldname": "column_break_26",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "booked_limit",
+   "fieldtype": "Currency",
+   "label": "Booked Limit"
+  },
+  {
+   "fieldname": "remaining_limit",
+   "fieldtype": "Currency",
+   "label": "Remaining Limit"
+  },
+  {
+   "fieldname": "lc_booked_limit",
+   "fieldtype": "Currency",
+   "label": "LC Booked Limit"
+  },
+  {
+   "fieldname": "lc_remaining_limit",
+   "fieldtype": "Currency",
+   "label": "LC Remaining Limit"
+  },
+  {
+   "fieldname": "assets_booked_limit",
+   "fieldtype": "Currency",
+   "label": "Assets Booked Limit"
+  },
+  {
+   "fieldname": "assets_remaining_limit",
+   "fieldtype": "Currency",
+   "label": "Assets Remaining Limit"
+  },
+  {
+   "fieldname": "bg_booked_limit",
+   "fieldtype": "Currency",
+   "label": "BG Booked Limit"
+  },
+  {
+   "fieldname": "bg_remaining_limit",
+   "fieldtype": "Currency",
+   "label": "BG Remaining Limit"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2021-05-31 13:30:40.690747",
+ "links": [
+  {
+   "link_doctype": "Facility Transaction",
+   "link_fieldname": "facility"
+  }
+ ],
+ "modified": "2021-06-28 11:11:14.035337",
  "modified_by": "Administrator",
  "module": "Newstareg",
  "name": "Facility",

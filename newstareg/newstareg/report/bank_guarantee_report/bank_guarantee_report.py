@@ -17,31 +17,38 @@ def get_columns():
 			"fieldname": "name",
 			"fieldtype": "Link",
 			"options": "Bank Guarantee",
+			"width": 80
+		},
+		{
+			"label": _("No"),
+			"fieldname": "bank_guarantee_number",
+			"fieldtype": "Data",
+			"width": 80
+		},
+		{
+			"label": _("Beneficiary"),
+			"fieldname": "name_of_beneficiary",
+			"fieldtype": "Data",
+			"width": 120
+		},
+		{
+			"label": _("purpose"),
+			"fieldname": "bank_guarantee_purpose",
+			"fieldtype": "Data",
+			"width": 80
+		},
+		{
+			"label": _("Bank"),
+			"fieldname": "bank",
+			"fieldtype": "Link",
+			"options": "Bank",
 			"width": 120
 		},
 		{
 			"label": _("No"),
 			"fieldname": "bank_guarantee_number",
 			"fieldtype": "Data",
-			"width": 120
-		},
-		{
-			"label": _("Beneficiary"),
-			"fieldname": "name_of_beneficiary",
-			"fieldtype": "Data",
-			"width": 100
-		},
-		{
-			"label": _("Amount"),
-			"fieldname": "amount",
-			"fieldtype": "Currency",
-			"width": 100
-		},
-		{
-			"label": _("Start Date"),
-			"fieldname": "start_date",
-			"fieldtype": "Date",
-			"width": 120
+			"width": 80
 		},
 		{
 			"label": _("End Date"),
@@ -50,17 +57,40 @@ def get_columns():
 			"width": 120
 		},
 		{
-			"label": _("Type"),
-			"fieldname": "status_of_letter_of_guarantee",
-			"fieldtype": "Data",
+			"label": _("Extend Date"),
+			"fieldname": "new_date",
+			"fieldtype": "Date",
 			"width": 120
 		},
 		{
-			"label": _("Bank Account"),
-			"fieldname": "bank_account",
-			"fieldtype": "Link",
-			"options": "Bank Account",
-			"width": 120
+			"label": _("Amount"),
+			"fieldname": "amount",
+			"fieldtype": "Currency",
+			"width": 100
+		},
+		{
+			"label": _("Bank %"),
+			"fieldname": "bank_percent",
+			"fieldtype": "Percent",
+			"width": 100
+		},
+		{
+			"label": _("Bank Amount"),
+			"fieldname": "bank_amount",
+			"fieldtype": "Currency",
+			"width": 100
+		},
+		{
+			"label": _("Facility %"),
+			"fieldname": "facility_percent",
+			"fieldtype": "Percent",
+			"width": 100
+		},
+		{
+			"label": _("Facility Amount"),
+			"fieldname": "facility_amount",
+			"fieldtype": "Currency",
+			"width": 100
 		}
 	]
 
@@ -79,16 +109,24 @@ def get_item_price_qty_data(filters):
 		conditions += " and a.start_date>=%(from_date)s"
 	if filters.get("to_date"):
 		conditions += " and a.end_date<=%(to_date)s"
+	if filters.get("bg_type"):
+		conditions += " and a.bg_type=%(bg_type)s"
+	if filters.get("bank"):
+		conditions += " and a.bg_type=%(bank)s"
 	item_results = frappe.db.sql("""
 				select
 						a.name as name,
 						a.bank_guarantee_number as bank_guarantee_number,
 						a.name_of_beneficiary as name_of_beneficiary,
-						a.amount as amount,
-						a.start_date as start_date,
+						a.bank_guarantee_purpose as bank_guarantee_purpose,
+						a.bank as bank,
 						a.end_date as end_date,
-						a.status_of_letter_of_guarantee as status_of_letter_of_guarantee,
-						a.bank_account as bank_account
+						a.new_date as new_date,
+						a.amount as amount,
+						a.rate as bank_percent,
+						a.bank_amount as bank_amount,
+						a.rate as facility_percent,
+						a.facility_amount as facility_amount						
 						from `tabBank Guarantee` a 
 				where
 					 a.docstatus !=2
@@ -105,8 +143,19 @@ def get_item_price_qty_data(filters):
 	if item_results:
 		for item_dict in item_results:
 			data = {
+				'name': item_dict.name,
+				'bank_guarantee_number': item_dict.bank_guarantee_number,
+				'name_of_beneficiary': item_dict.name_of_beneficiary,
+				'bank_guarantee_purpose': item_dict.bank_guarantee_purpose,
+				'bank': item_dict.bank,
+				'end_date': item_dict.end_date,
+				'new_date': item_dict.new_date,
+				'amount': item_dict.amount,
+				'bank_percent': item_dict.bank_percent,
+				'bank_amount': item_dict.bank_amount,
+				'facility_percent': item_dict.facility_percent,
+				'facility_amount': item_dict.facility_amount
 
-				'name': item_dict.name
 			}
 			result.append(data)
 
