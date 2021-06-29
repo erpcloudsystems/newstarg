@@ -116,7 +116,8 @@ def get_columns():
 			"width": 120
 		}
 
-	]
+	],
+
 
 def get_data(filters, columns):
 	item_price_qty_data = []
