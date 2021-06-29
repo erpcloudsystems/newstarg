@@ -108,6 +108,8 @@ def get_item_price_qty_data(filters):
 	conditions = ""
 	if filters.get("type_of_letter_of_guarantee"):
 		conditions += " and a.type_of_letter_of_guarantee=%(type_of_letter_of_guarantee)s"
+	if filters.get("status_of_letter_of_guarantee"):
+		conditions += " and a.status_of_letter_of_guarantee=%(status_of_letter_of_guarantee)s"
 	if filters.get("bank_guarantee_purpose"):
 		conditions += " and a.bank_guarantee_purpose=%(bank_guarantee_purpose)s"
 	if filters.get("from_date"):
@@ -117,7 +119,7 @@ def get_item_price_qty_data(filters):
 	if filters.get("bg_type"):
 		conditions += " and a.bg_type=%(bg_type)s"
 	if filters.get("bank"):
-		conditions += " and a.bg_type=%(bank)s"
+		conditions += " and a.bank=%(bank)s"
 	item_results = frappe.db.sql("""
 				select
 						a.name as name,

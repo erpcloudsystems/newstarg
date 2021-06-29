@@ -1,0 +1,23 @@
+{
+ "creation": "2021-06-28 20:05:26.407314",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{\"bank_guarantee_purpose\":\"Bank Guarantee\",\"bg_type\":\"Providing\"}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Bank Guarantees Facility",
+ "modified": "2021-06-28 20:05:26.407314",
+ "modified_by": "Administrator",
+ "module": "Newstareg",
+ "name": "Bank Guarantees Facility",
+ "owner": "Administrator",
+ "report_field": "facility_amount",
+ "report_function": "Sum",
+ "report_name": "Bank Guarantee Report",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}

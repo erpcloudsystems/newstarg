@@ -31,6 +31,9 @@
   "column_break_17",
   "lc_terms",
   "overdraft_section",
+  "od_credit_limit",
+  "od_booked_limit",
+  "od_remaining_limit",
   "facility_od",
   "od_terms",
   "assets_section",
@@ -115,7 +118,7 @@
   {
    "fieldname": "lc_interest",
    "fieldtype": "Percent",
-   "label": "LC Interest"
+   "label": "LC Interest (%)"
   },
   {
    "fieldname": "lc_account",
@@ -185,42 +188,67 @@
   {
    "fieldname": "booked_limit",
    "fieldtype": "Currency",
-   "label": "Booked Limit"
+   "label": "Booked Limit",
+   "read_only": 1
   },
   {
    "fieldname": "remaining_limit",
    "fieldtype": "Currency",
-   "label": "Remaining Limit"
+   "label": "Remaining Limit",
+   "read_only": 1
   },
   {
    "fieldname": "lc_booked_limit",
    "fieldtype": "Currency",
-   "label": "LC Booked Limit"
+   "label": "LC Booked Limit",
+   "read_only": 1
   },
   {
    "fieldname": "lc_remaining_limit",
    "fieldtype": "Currency",
-   "label": "LC Remaining Limit"
+   "label": "LC Remaining Limit",
+   "read_only": 1
   },
   {
    "fieldname": "assets_booked_limit",
    "fieldtype": "Currency",
-   "label": "Assets Booked Limit"
+   "label": "Assets Booked Limit",
+   "read_only": 1
   },
   {
    "fieldname": "assets_remaining_limit",
    "fieldtype": "Currency",
-   "label": "Assets Remaining Limit"
+   "label": "Assets Remaining Limit",
+   "read_only": 1
   },
   {
    "fieldname": "bg_booked_limit",
    "fieldtype": "Currency",
-   "label": "BG Booked Limit"
+   "label": "BG Booked Limit",
+   "read_only": 1
   },
   {
    "fieldname": "bg_remaining_limit",
    "fieldtype": "Currency",
-   "label": "BG Remaining Limit"
+   "label": "BG Remaining Limit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "od_credit_limit",
+   "fieldtype": "Currency",
+   "label": "OD Credit Limit"
+  },
+  {
+   "fieldname": "od_booked_limit",
+   "fieldtype": "Currency",
+   "label": "OD Booked Limit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "od_remaining_limit",
+   "fieldtype": "Currency",
+   "label": "OD Remaining Limit",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -230,7 +258,7 @@
    "link_fieldname": "facility"
   }
  ],
- "modified": "2021-06-28 11:11:14.035337",
+ "modified": "2021-06-28 21:20:03.421360",
  "modified_by": "Administrator",
  "module": "Newstareg",
  "name": "Facility",

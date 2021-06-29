@@ -1,0 +1,38 @@
+{
+ "cards": [
+  {
+   "card": "Total Payable Cheques"
+  },
+  {
+   "card": "Monthly Payable Cheques"
+  },
+  {
+   "card": "Total Receivable Cheques"
+  },
+  {
+   "card": "Monthly Receivable Cheques"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Payable Cheques",
+   "width": "Full"
+  },
+  {
+   "chart": "Receivable Cheques",
+   "width": "Full"
+  }
+ ],
+ "creation": "2021-06-28 18:51:59.277276",
+ "dashboard_name": "Bank Guarantee Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2021-06-28 18:51:59.277276",
+ "modified_by": "Administrator",
+ "module": "Newstareg",
+ "name": "Bank Guarantee Dashboard",
+ "owner": "Administrator"
+}

@@ -1,0 +1,35 @@
+{
+ "based_on": "",
+ "chart_name": "Cheques",
+ "chart_type": "Report",
+ "creation": "2021-06-28 17:50:52.397979",
+ "custom_options": "",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{\"type\":[\"Pay\"]}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2021-06-28 17:50:52.397979",
+ "modified_by": "Administrator",
+ "module": "Newstareg",
+ "name": "Cheques",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Cheques Report",
+ "source": "",
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Line",
+ "use_report_chart": 0,
+ "value_based_on": "",
+ "x_field": "drawn_bank",
+ "y_axis": [
+  {
+   "y_field": "paid_amount"
+  }
+ ]
+}

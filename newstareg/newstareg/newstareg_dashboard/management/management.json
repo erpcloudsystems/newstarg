@@ -1,0 +1,38 @@
+{
+ "cards": [
+  {
+   "card": "Total Payable Cheques"
+  },
+  {
+   "card": "Monthly Payable Cheques"
+  },
+  {
+   "card": "Total Receivable Cheques"
+  },
+  {
+   "card": "Monthly Receivable Cheques"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Payable Cheques",
+   "width": "Full"
+  },
+  {
+   "chart": "Receivable Cheques",
+   "width": "Full"
+  }
+ ],
+ "creation": "2021-06-28 17:25:48.524057",
+ "dashboard_name": "Management",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2021-06-28 17:58:45.877686",
+ "modified_by": "Administrator",
+ "module": "Newstareg",
+ "name": "Management",
+ "owner": "Administrator"
+}

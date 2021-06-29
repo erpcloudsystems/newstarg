@@ -1,0 +1,51 @@
+{
+ "cards": [
+  {
+   "card": "Provided Guarantees"
+  },
+  {
+   "card": "Receiving  Guarantees"
+  },
+  {
+   "card": "Cash Guarantees"
+  },
+  {
+   "card": "Cheque Guarantees"
+  },
+  {
+   "card": "Bank Guarantees"
+  },
+  {
+   "card": "Cheque Guarantees Receiving"
+  },
+  {
+   "card": "Bank Guarantees Facility"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Bank Guarantee Provided",
+   "width": "Full"
+  },
+  {
+   "chart": "Bank Guarantee Receiving",
+   "width": "Full"
+  },
+  {
+   "chart": "Bank Guarantee Facility",
+   "width": "Full"
+  }
+ ],
+ "creation": "2021-06-28 18:51:59.277276",
+ "dashboard_name": "Guarantee Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2021-06-28 20:10:10.542655",
+ "modified_by": "Administrator",
+ "module": "Newstareg",
+ "name": "Guarantee Dashboard",
+ "owner": "Administrator"
+}

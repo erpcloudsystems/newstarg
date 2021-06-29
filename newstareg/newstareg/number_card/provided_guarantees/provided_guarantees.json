@@ -1,0 +1,23 @@
+{
+ "creation": "2021-06-28 19:30:15.077156",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{\"bg_type\":\"Providing\"}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Provided Guarantees",
+ "modified": "2021-06-28 19:30:15.077156",
+ "modified_by": "Administrator",
+ "module": "Newstareg",
+ "name": "Provided Guarantees",
+ "owner": "Administrator",
+ "report_field": "amount",
+ "report_function": "Sum",
+ "report_name": "Bank Guarantee Report",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}

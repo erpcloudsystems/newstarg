@@ -22,9 +22,15 @@ from frappe.utils import add_to_date, now, nowdate
 class FacilityTransaction(Document):
 	def on_submit(self):
 		self.make_journal_entry()
+		self.update_facility()
+		self.update_facility_total()
+
+	def on_cancel(self):
+		self.update_facility_on_cancel()
+		self.update_facility_total_on_cancel()
 
 	def make_journal_entry(self):
-		if self.commission_based_on:
+		if self.with_bank_commission:
 			accounts = [
 				{
 				"doctype": "Journal Entry Account",
@@ -72,7 +78,7 @@ class FacilityTransaction(Document):
 			doc.insert()
 			doc.submit()
 
-		if not self.commission_based_on:
+		if not self.with_bank_commission:
 			accounts = [
 				{
 				"doctype": "Journal Entry Account",
@@ -103,5 +109,80 @@ class FacilityTransaction(Document):
 			})
 			doc.insert()
 			doc.submit()
+
+	def update_facility(self):
+		if self.facility_type == "Landed Cost":
+			current_booked = frappe.db.get_value("Facility", self.facility, "lc_booked_limit")
+			new_booked = current_booked + self.facility_amount
+			frappe.db.set_value('Facility', self.facility, 'lc_booked_limit', new_booked)
+			current_credit = frappe.db.get_value("Facility", self.facility, "lc_credit_limit")
+			new_remaining = current_credit - new_booked
+			frappe.db.set_value('Facility', self.facility, 'lc_remaining_limit', new_remaining)
+			if new_booked > current_credit:
+				frappe.throw(_("Cannot Exceed The Credit Limit For Landed Cost Facility"))
+
+		if self.facility_type == "OverDraft":
+			current_booked = frappe.db.get_value("Facility", self.facility, "od_booked_limit")
+			new_booked = current_booked + self.facility_amount
+			frappe.db.set_value('Facility', self.facility, 'od_booked_limit', new_booked)
+			current_credit = frappe.db.get_value("Facility", self.facility, "od_credit_limit")
+			new_remaining = current_credit - new_booked
+			frappe.db.set_value('Facility', self.facility, 'od_remaining_limit', new_remaining)
+			if new_booked > current_credit:
+				frappe.throw(_("Cannot Exceed The Credit Limit For OverDraft Facility"))
+
+		if self.facility_type == "Assets":
+			current_booked = frappe.db.get_value("Facility", self.facility, "assets_booked_limit")
+			new_booked = current_booked + self.facility_amount
+			frappe.db.set_value('Facility', self.facility, 'assets_booked_limit', new_booked)
+			current_credit = frappe.db.get_value("Facility", self.facility, "assets_credit_limit")
+			new_remaining = current_credit - new_booked
+			frappe.db.set_value('Facility', self.facility, 'assets_remaining_limit', new_remaining)
+			if new_booked > current_credit:
+				frappe.throw(_("Cannot Exceed The Credit Limit For Assets Facility"))
+
+	def update_facility_total(self):
+		current_bg_booked = frappe.db.get_value("Facility", self.facility, "bg_booked_limit")
+		current_lc_booked = frappe.db.get_value("Facility", self.facility, "lc_booked_limit")
+		current_od_booked = frappe.db.get_value("Facility", self.facility, "od_booked_limit")
+		current_assets_booked = frappe.db.get_value("Facility", self.facility, "assets_booked_limit")
+		current_total_booked = current_bg_booked + current_lc_booked + current_od_booked + current_assets_booked
+		frappe.db.set_value('Facility', self.facility, 'booked_limit', current_total_booked)
+		current_total_credit = frappe.db.get_value("Facility", self.facility, "credit_limit")
+		new_remaining_value = current_total_credit - current_total_booked
+		frappe.db.set_value('Facility', self.facility, 'remaining_limit', new_remaining_value)
+
+	def update_facility_on_cancel(self):
+		if self.facility_type == "Landed Cost":
+			booked = frappe.db.get_value("Facility", self.facility, "lc_booked_limit")
+			remaining = frappe.db.get_value("Facility", self.facility, "lc_remaining_limit")
+			x = booked - self.facility_amount
+			y = remaining + self.facility_amount
+			frappe.db.set_value('Facility', self.facility, 'lc_booked_limit', x)
+			frappe.db.set_value('Facility', self.facility, 'lc_remaining_limit', y)
+
+		if self.facility_type == "OverDraft":
+			booked = frappe.db.get_value("Facility", self.facility, "od_booked_limit")
+			remaining = frappe.db.get_value("Facility", self.facility, "od_remaining_limit")
+			x = booked - self.facility_amount
+			y = remaining + self.facility_amount
+			frappe.db.set_value('Facility', self.facility, 'od_booked_limit', x)
+			frappe.db.set_value('Facility', self.facility, 'od_remaining_limit', y)
+
+		if self.facility_type == "Assets":
+			booked = frappe.db.get_value("Facility", self.facility, "assets_booked_limit")
+			remaining = frappe.db.get_value("Facility", self.facility, "assets_remaining_limit")
+			x = booked - self.facility_amount
+			y = remaining + self.facility_amount
+			frappe.db.set_value('Facility', self.facility, 'assets_booked_limit', x)
+			frappe.db.set_value('Facility', self.facility, 'assets_remaining_limit', y)
+
+	def update_facility_total_on_cancel(self):
+			booked = frappe.db.get_value("Facility", self.facility, "booked_limit")
+			remaining = frappe.db.get_value("Facility", self.facility, "remaining_limit")
+			x = booked - self.facility_amount
+			y = remaining + self.facility_amount
+			frappe.db.set_value('Facility', self.facility, 'booked_limit', x)
+			frappe.db.set_value('Facility', self.facility, 'remaining_limit', y)
 
 	pass

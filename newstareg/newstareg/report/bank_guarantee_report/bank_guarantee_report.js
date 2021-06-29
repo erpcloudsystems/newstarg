@@ -26,7 +26,8 @@ frappe.query_reports["Bank Guarantee Report"] = {
 			"fieldname":"bg_type",
 			"label": __("Provider"),
 			"fieldtype": "Select",
-			"options":  "\nReceiving\nProviding",
+			"options":  ["Receiving","Providing"],
+			"default": "Providing"
 		},
 		{
 			"fieldname":"status_of_letter_of_guarantee",

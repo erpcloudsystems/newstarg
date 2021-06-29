@@ -4,7 +4,7 @@
  "charts": [],
  "creation": "2021-06-21 06:01:22.706786",
  "developer_mode_only": 0,
- "disable_user_customization": 0,
+ "disable_user_customization": 1,
  "docstatus": 0,
  "doctype": "Workspace",
  "extends_another_page": 0,
@@ -63,6 +63,33 @@
    "label": "Facility",
    "link_to": "Facility",
    "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Facility Report",
+   "link_to": "Facility Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Facility Transaction",
+   "link_to": "Facility Transaction",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Facility Transaction Report",
+   "link_to": "Facility Transaction Report",
+   "link_type": "Report",
    "onboard": 0,
    "type": "Link"
   },
@@ -127,13 +154,26 @@
    "type": "Link"
   }
  ],
- "modified": "2021-06-28 13:49:20.078252",
+ "modified": "2021-06-28 20:34:23.507402",
  "modified_by": "Administrator",
  "module": "Newstareg",
  "name": "Management",
  "owner": "Administrator",
  "pin_to_bottom": 0,
  "pin_to_top": 1,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "doc_view": "Dashboard",
+   "label": "Cheques Dashboard",
+   "link_to": "Cheques Dashboard",
+   "type": "Dashboard"
+  },
+  {
+   "doc_view": "Dashboard",
+   "label": "Guarantee Dashboard",
+   "link_to": "Guarantee Dashboard",
+   "type": "Dashboard"
+  }
+ ],
  "shortcuts_label": "Shortcuts"
 }
