@@ -28,7 +28,7 @@ def get_columns():
 		{
 			"label": _("Bank"),
 			"fieldname": "bank",
-			"fieldtype": "Date",
+			"fieldtype": "Data",
 			"width": 100
 		},
 		{
@@ -50,10 +50,34 @@ def get_columns():
 			"width": 120
 		},
 		{
+			"label": _("Booked"),
+			"fieldname": "booked_limit",
+			"fieldtype": "Currency",
+			"width": 120
+		},
+		{
+			"label": _("Remaining"),
+			"fieldname": "remaining_limit",
+			"fieldtype": "Currency",
+			"width": 120
+		},
+		{
 			"label": _("BG Credit"),
 			"fieldname": "bg_credit",
 			"fieldtype": "Currency",
-			"width": 200
+			"width": 120
+		},
+		{
+			"label": _("BG Booked"),
+			"fieldname": "bg_booked_limit",
+			"fieldtype": "Currency",
+			"width": 120
+		},
+		{
+			"label": _("BG Remaining"),
+			"fieldname": "bg_remaining_limit",
+			"fieldtype": "Currency",
+			"width": 120
 		},
 		{
 			"label": _("LC Credit"),
@@ -62,14 +86,32 @@ def get_columns():
 			"width": 120
 		},
 		{
-			"label": _("OD Credit Limit"),
+			"label": _("LC Booked"),
+			"fieldname": "lc_booked_limit",
+			"fieldtype": "Currency",
+			"width": 120
+		},
+		{
+			"label": _("LC Remaining"),
+			"fieldname": "lc_remaining_limit",
+			"fieldtype": "Currency",
+			"width": 120
+		},
+		{
+			"label": _("OD Credit"),
 			"fieldname": "od_credit_limit",
 			"fieldtype": "Currency",
 			"width": 120
 		},
 		{
-			"label": _("Assets Credit Limit"),
-			"fieldname": "assets_credit_limit",
+			"label": _("OD Booked"),
+			"fieldname": "od_booked_limit",
+			"fieldtype": "Currency",
+			"width": 120
+		},
+		{
+			"label": _("OD Remaining"),
+			"fieldname": "od_remaining_limit",
 			"fieldtype": "Currency",
 			"width": 120
 		}
@@ -129,10 +171,18 @@ def get_item_price_qty_data(filters):
 							a.bank as bank,
 							a.start_date as start_date,
 							a.end_date as end_date,
-							CONCAT_WS(' / ',a.credit_limit ,a.booked_limit ,a.remaining_limit ) as credit_limit,
-							CONCAT_WS(' / ',a.bg_credit ,a.bg_booked_limit ,a.bg_remaining_limit ) as bg_credit,
-							CONCAT_WS(' / ',a.lc_credit_limit ,a.lc_booked_limit ,a.lc_remaining_limit ) as lc_credit_limit,
-							CONCAT_WS(' / ',a.od_credit_limit ,a.od_booked_limit ,a.od_remaining_limit ) as od_credit_limit,
+							a.credit_limit as credit_limit,
+							a.booked_limit as booked_limit,
+							a.remaining_limit as remaining_limit,
+							a.bg_credit as bg_credit,
+							a.bg_booked_limit as bg_booked_limit,
+							a.bg_remaining_limit as bg_remaining_limit,
+							a.lc_credit_limit as lc_credit_limit,
+							a.lc_booked_limit as lc_booked_limit,
+							a.lc_remaining_limit as lc_remaining_limit,
+							a.od_credit_limit as od_credit_limit,
+							a.od_booked_limit as od_booked_limit,
+							a.od_remaining_limit as od_remaining_limit,
 							CONCAT_WS(' / ',a.assets_credit_limit ,a.assets_booked_limit ,a.assets_remaining_limit ) as assets_credit_limit
 							from `tabFacility` a
 					where
@@ -157,10 +207,17 @@ def get_item_price_qty_data(filters):
 				'start_date': item_dict.start_date,
 				'end_date': item_dict.end_date,
 				'credit_limit': item_dict.credit_limit,
+				'booked_limit': item_dict.booked_limit,
+				'remaining_limit': item_dict.remaining_limit,
+				'bg_booked_limit': item_dict.bg_booked_limit,
+				'bg_remaining_limit': item_dict.bg_remaining_limit,
 				'bg_credit': item_dict.bg_credit,
 				'lc_credit_limit': item_dict.lc_credit_limit,
+				'lc_booked_limit': item_dict.lc_booked_limit,
+				'lc_remaining_limit': item_dict.lc_remaining_limit,
 				'od_credit_limit': item_dict.od_credit_limit,
-				'assets_credit_limit': item_dict.assets_credit_limit
+				'od_booked_limit': item_dict.od_booked_limit,
+				'od_remaining_limit': item_dict.od_remaining_limit
 			}
 			result.append(data)
 

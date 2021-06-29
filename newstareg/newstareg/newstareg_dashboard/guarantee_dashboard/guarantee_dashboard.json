@@ -29,10 +29,14 @@
   },
   {
    "chart": "Bank Guarantee Receiving",
-   "width": "Full"
+   "width": "Half"
   },
   {
    "chart": "Bank Guarantee Facility",
+   "width": "Half"
+  },
+  {
+   "chart": "Bank Guarantee Facility Account",
    "width": "Full"
   }
  ],
@@ -43,7 +47,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2021-06-28 20:10:10.542655",
+ "modified": "2021-06-29 11:42:42.817740",
  "modified_by": "Administrator",
  "module": "Newstareg",
  "name": "Guarantee Dashboard",

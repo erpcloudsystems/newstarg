@@ -38,19 +38,22 @@
    "default": "Today",
    "fieldname": "posting_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Posting Date",
    "reqd": 1
   },
   {
    "fieldname": "end_date",
    "fieldtype": "Date",
+   "in_standard_filter": 1,
    "label": "End Date",
    "reqd": 1
   },
   {
    "fieldname": "facility_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Facility Type",
    "options": "\nLanded Cost\nOverDraft\nAssets",
    "reqd": 1
@@ -97,6 +100,7 @@
   {
    "fieldname": "facility_amount",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Facility Amount",
    "reqd": 1
   },
@@ -112,6 +116,7 @@
   {
    "fieldname": "facility",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Facility",
    "options": "Facility",
    "reqd": 1
@@ -145,6 +150,7 @@
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
+   "in_standard_filter": 1,
    "label": "Start Date",
    "reqd": 1
   }
@@ -157,7 +163,7 @@
    "link_fieldname": "facility_transaction"
   }
  ],
- "modified": "2021-06-29 10:30:00.593392",
+ "modified": "2021-06-29 11:50:14.575826",
  "modified_by": "Administrator",
  "module": "Newstareg",
  "name": "Facility Transaction",

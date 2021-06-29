@@ -104,6 +104,15 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Multi Cheques Entry",
+   "link_to": "Cheque",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Payment Entry",
    "link_to": "Payment Entry",
    "link_type": "DocType",
@@ -113,7 +122,7 @@
   {
    "hidden": 0,
    "is_query_report": 1,
-   "label": "Cheque Report",
+   "label": "Cheques Report",
    "link_to": "Cheques Report",
    "link_type": "Report",
    "onboard": 0,
@@ -130,7 +139,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Contact",
+   "label": "Contract",
    "link_to": "Contract",
    "link_type": "DocType",
    "onboard": 0,
@@ -154,7 +163,7 @@
    "type": "Link"
   }
  ],
- "modified": "2021-06-28 20:34:23.507402",
+ "modified": "2021-06-29 10:58:49.917480",
  "modified_by": "Administrator",
  "module": "Newstareg",
  "name": "Management",
@@ -165,7 +174,7 @@
   {
    "doc_view": "Dashboard",
    "label": "Cheques Dashboard",
-   "link_to": "Cheques Dashboard",
+   "link_to": "Management",
    "type": "Dashboard"
   },
   {
