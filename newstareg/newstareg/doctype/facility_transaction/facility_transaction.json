@@ -15,6 +15,7 @@
   "facility_account",
   "column_break_6",
   "posting_date",
+  "start_date",
   "end_date",
   "with_bank_commission",
   "commission_based_on",
@@ -140,6 +141,12 @@
    "fieldname": "with_bank_commission",
    "fieldtype": "Check",
    "label": "With Bank Commission"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -150,7 +157,7 @@
    "link_fieldname": "facility_transaction"
   }
  ],
- "modified": "2021-06-28 17:21:20.269542",
+ "modified": "2021-06-29 10:30:00.593392",
  "modified_by": "Administrator",
  "module": "Newstareg",
  "name": "Facility Transaction",
