@@ -30,7 +30,7 @@ from six import iteritems
 from erpnext.accounts.doctype.sales_invoice.sales_invoice import SalesInvoice
 
 # ======================================================================= SalesInvoice =========method to make taxes JV
-@frappe.whitelist()
+#@frappe.whitelist()
 def test(self):
     self.commercial_no = 12
 
@@ -196,7 +196,7 @@ def cancel_tax(self):
 	serial.save()
 	jv.cancel()
 
-SalesInvoice.validate = validate_taxe_type
+#SalesInvoice.validate = validate_taxe_type
 
 #========================== End of sales invoice #############################################################
 
